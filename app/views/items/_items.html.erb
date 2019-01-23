@@ -1,0 +1,12 @@
+<% if items %>
+
+  <% items.each do |item| %>
+   <div>
+   <img src ="<%= item.image_url %>" alt="">
+   </div>
+   
+   <div>
+   <p><%= item.name%></p>
+   </div>
+   <% end %>
+ <% end %>  
