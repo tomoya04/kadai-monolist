@@ -1,12 +1,20 @@
-<% if items %>
+<% if items.present? %>
 
   <% items.each do |item| %>
-   <div>
-   <img src ="<%= item.image_url %>" alt="">
-   </div>
-   
-   <div>
-   <p><%= item.name%></p>
-   </div>
+       <div>
+         <img src ="<%= item.image_url %>" alt="">
+       </div>
+       
+  　　　 <div>
+            <% if item.persisted? %>
+              <p class="item-title"><%= link_to item.name,item %></p>
+            <% else %>
+              <p class="item-title"><%= item.name %></p>
+            <% end %>
+　　　 </div>
+           
+      <% if logged_in? %>
+       <%= render "ownerships/want_button",item: item %>
+      <% end %>
    <% end %>
- <% end %>  
+<% end %>  

@@ -1,10 +1,8 @@
-
-
-  <%= form_tag(new_item_path,method: :get, class: "form_inline") do %>
+<%= form_tag(new_item_path,method: :get, class: "form_inline") do %>
       <div class="form-group">
        <%= text_field_tag :keyword, @keyword, class: "form-control input-g", placeholder: "キーワード入力",size: 40 %>
       </div>
       <%= submit_tag '商品を検索', class: 'btn btn-success btn-lg' %>
-  <% end %>
+<% end %>
   
-  <%= render "items",items: @items %>
+<%= render "items",items: @items %>
